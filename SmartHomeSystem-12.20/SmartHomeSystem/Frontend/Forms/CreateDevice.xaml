@@ -1,0 +1,106 @@
+﻿<Window x:Class="SmartHomeSystem.Frontend.Forms.CreateDevice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="新建设备"
+        Height="280"
+    Width="320"
+    WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <!-- 弹性空间 -->
+            <RowDefinition Height="Auto" />
+            <!-- 按钮区域 -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <!-- 标签列 -->
+            <ColumnDefinition Width="*" />
+            <!-- 内容列 -->
+            <ColumnDefinition Width="Auto" />
+            <!-- 单位列 -->
+        </Grid.ColumnDefinitions>
+
+        <!-- 额定功率 -->
+        <Label Content="额定功率" Grid.Row="0" Grid.Column="0"
+               Margin="0,0,10,10" VerticalAlignment="Center"
+               Height="25" VerticalContentAlignment="Center" />
+        <TextBox x:Name="RatedPowerText" Grid.Row="0" Grid.Column="1"
+                   Text="0"
+
+                   Height="25"
+                   Padding="5"
+                   Margin="0,0,0,10"
+                   Background="#FFF0F0F0"
+                   VerticalAlignment="Center" />
+        <Label Content="千瓦时" Grid.Row="0" Grid.Column="2"
+               Margin="10,0,0,10" VerticalAlignment="Center"
+               Height="25" VerticalContentAlignment="Center" />
+
+        <!-- 节点名 -->
+        <Label Content="节点名" Grid.Row="1" Grid.Column="0"
+               Margin="0,0,10,10" VerticalAlignment="Center"
+               Height="25" VerticalContentAlignment="Center" />
+        <TextBox x:Name="NodeNameText" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                   Text="未命名设备"
+                   VerticalAlignment="Center"
+                   Height="25"
+                   Padding="5"
+                   Margin="0,0,0,10"
+                   Background="#FFF0F0F0" />
+
+        <!-- 设备类型 -->
+        <Label Content="设备类型" Grid.Row="2" Grid.Column="0"
+               Margin="0,0,10,10" VerticalAlignment="Center"
+               Height="25" VerticalContentAlignment="Center" />
+        <ComboBox x:Name="DeviceTypeComboBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                  Height="28" Margin="0,0,0,10"
+            Padding="3"
+                  VerticalAlignment="Center"
+                  VerticalContentAlignment="Center">
+            <ComboBoxItem Content="默认用电器" />
+            <ComboBoxItem Content="默认发电器" />
+            <ComboBoxItem Content="默认电池" />
+        </ComboBox>
+
+        <!-- 耐用度 -->
+        <Label Content="耐用度" Grid.Row="3" Grid.Column="0"
+               Margin="0,0,10,10" VerticalAlignment="Center"
+               Height="25" VerticalContentAlignment="Center" />
+        <ComboBox x:Name="DurabilityComboBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                  Height="28" Margin="0,0,0,10"
+            Padding="3"
+                  VerticalAlignment="Center"
+                  VerticalContentAlignment="Center">
+            <ComboBoxItem Content="易损" />
+            <ComboBoxItem Content="普通" />
+            <ComboBoxItem Content="难损" />
+        </ComboBox>
+
+        <!-- 按钮区域 -->
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="0,20,0,5"
+            Height="35">
+            <Button x:Name="CreateButton" Content="创建"
+                    Width="70" Height="30"
+                    Margin="0,0,12,0"
+                Click="CreateButton_Click" />
+            <Button x:Name="CancelButton" Content="取消"
+                    Width="70" Height="30"
+                    Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

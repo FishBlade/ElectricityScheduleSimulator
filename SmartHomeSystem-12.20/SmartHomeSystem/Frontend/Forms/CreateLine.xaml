@@ -1,0 +1,88 @@
+﻿<Window x:Class="SmartHomeSystem.Frontend.Forms.CreateLine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="创建线路"
+        Height="200"
+    Width="300"
+
+    WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        SizeToContent="Manual">
+
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 节点名 -->
+        <Label Content="节点名"
+               Grid.Row="0" Grid.Column="0"
+               Margin="0,0,10,5"
+            VerticalAlignment="Center"
+               HorizontalAlignment="Left"
+               Height="25" />
+
+        <TextBox x:Name="NodeNameText"
+                   Grid.Row="0" Grid.Column="1"
+                   Text="未命名线路"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Height="25"
+                   Margin="0,0,0,5"
+                   Padding="5"
+                   TextWrapping="NoWrap"
+
+                   Background="#FFF0F0F0" />
+
+        <!-- 最大功率 -->
+        <Label Content="最大功率"
+               Grid.Row="1" Grid.Column="0"
+               Margin="0,5,10,5"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"
+               Height="25" />
+
+        <TextBox x:Name="MaxPowerText"
+                   Grid.Row="1" Grid.Column="1"
+                   Text="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Height="25"
+                   Margin="0,5,0,5"
+                   Padding="5"
+                   Background="#FFF0F0F0" />
+        <!-- 按钮区域 -->
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="0,15,0,5"
+                    Height="35">
+            <Button x:Name="CreateButton"
+                    Content="创建"
+                    Width="70" Height="30"
+                    Margin="0,0,12,0"
+                    Click="CreateButton_Click" />
+            <Button x:Name="CancelButton"
+                    Content="取消"
+                    Width="70" Height="30"
+                    Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
